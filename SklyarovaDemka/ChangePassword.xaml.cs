@@ -23,5 +23,13 @@ namespace SklyarovaDemka
         {
             InitializeComponent();
         }
-    }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string CurrentPassword = txtCurrentPassword.Password;
+            string PasswordNew = txtPasswordNew.Password;
+            string PasswordNewPod = txtPasswordNewPod.Password;
+            if (string.IsNullOrWhiteSpace(CurrentPassword)||string.IsNullOrWhiteSpace(PasswordNew)||string.IsNullOrWhiteSpace(PasswordNewPod))
+        {
+                MessageBox.Show("Все поля обязательны для заполнения", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 }
